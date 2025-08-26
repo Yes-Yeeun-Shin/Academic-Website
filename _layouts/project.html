@@ -1,0 +1,124 @@
+---
+layout: default
+body_classes: page-project
+---
+
+{% assign limit = page.gallery_limit | default: 6 %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+
+      <!-- Left Column: Title & Details -->
+      <div class="col-12 col-md-6 mb-4">
+
+        {% if page.title %}
+          <div class="project-heading">
+            <h1>{{ page.title }}</h1>
+          </div>
+        {% endif %}
+
+        {% if page.categories %}
+          <div class="project-categories">
+          {% include framework/categories-badges.html 
+              categories=page.categories
+          %}
+          </div>
+        {% endif %}
+
+        <!-- Publication Buttons -->
+        {% if page.publication_id %}
+          {% assign publication = site.publications | where: "key", page.publication_id | first %}
+          {% if publication %}
+            <div class="links mt-3 mb-4">
+              {% if publication.abstract %}<a class="btn btn-sm btn-outline-primary abstract" role="button">Abstract</a>{% endif %}
+              {% if publication.doi %}<a href="https://doi.org/{{ publication.doi }}" class="btn btn-sm btn-outline-primary" target="_blank">DOI</a>{% endif %}
+              {% if publication.pdf %}<a href="{{ publication.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm btn-outline-primary" target="_blank">PDF</a>{% endif %}
+              {% if publication.video %}<a href="{{ publication.video }}" class="btn btn-sm btn-outline-primary" target="_blank">Video</a>{% endif %}
+            </div>
+          {% endif %}
+        {% endif %}
+
+        <!-- Project Details: Keywords, Presented at, Awards, Role -->
+        <div class="project-details">
+          {% if page.keywords %}
+            <div class="project-keywords">
+              <strong>Keywords</strong>
+              <span>{{ page.keywords | join: ", " }}</span>
+            </div>
+          {% endif %}
+
+          {% if page.presented_at %}
+            <div class="project-presented-at">
+              <strong>Presented at</strong>
+              <span>{{ page.presented_at }}</span>
+            </div>
+          {% endif %}
+          
+          {% if page.awards %}
+            <div class="project-awards">
+              <strong>Awards</strong>
+              <span>
+                {% for award in page.awards %}
+                  <a href="{{ award.url }}" target="_blank">{{ award.name }}</a>
+                {% endfor %}
+              </span>
+            </div>
+          {% endif %}
+
+          {% if page.role %}
+            <div class="project-role">
+              <strong>Role</strong>
+              <span>{{ page.role }}</span>
+            </div>
+          {% endif %}
+        </div>
+        
+        <!-- Hidden Abstract Block -->
+        {% if page.publication_id and publication.abstract %}
+          <div class="abstract hidden mt-3">
+            <p>{{ publication.abstract }}</p>
+          </div>
+        {% endif %}
+
+      </div>
+
+      <!-- Right Column: Main Content (Markdown Body) -->
+      <div class="col-12 col-md-6 mb-4">
+        <div class="content">{{ content }}</div>
+      </div>
+
+    </div>
+
+    <!-- Masonry Image Gallery -->
+    <div class="row">
+      <div class="col">
+        <div class="gallery gallery-masonry">
+          {% for item in page.gallery limit: limit %}
+            <div class="gallery-item">
+              <div class="gallery-image"><img src="{{ item.image | relative_url }}" alt="{{ item.caption }}"/></div>
+              {% if item.caption %}
+              <div class="gallery-caption">{{ item.caption }}</div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Masonry Scripts -->
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+<script>
+  var grid = document.querySelector('.gallery');
+  var msnry;
+
+  imagesLoaded( grid, function() {
+    msnry = new Masonry( grid, {
+      itemSelector: '.gallery-item',
+      percentPosition: true,
+    });
+  });
+</script>

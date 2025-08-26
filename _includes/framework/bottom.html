@@ -1,0 +1,14 @@
+<div class="bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="social">
+          {% include framework/social.html %}
+        </div>
+        <div class="copyright">
+          {{ site.bottom.copyright_text | markdownify | remove: '<p>' | remove: '</p>' }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

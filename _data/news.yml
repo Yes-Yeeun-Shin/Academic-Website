@@ -1,0 +1,35 @@
+- date: "05/2025"
+  icon: "🌸"
+  description: "Presented Interactivity Demo at **#CHI25** in Yokohama!"
+
+- date: "01/2024"
+  icon: "🏢"
+  description: "Joined **Samsung Electronics R&D** as Interaction Designer on AI interfaces"
+
+- date: "08/2023"
+  icon: "🎓"
+  description: "Defended thesis on XR interfaces and graduated from KAIST"
+
+- date: "04/2023"
+  icon: "🎤"
+  description: "Presented as Finalist in Student Game Competition at **#CHI23**"
+
+# - date: "04/2023"
+#   icon: "🏅"
+#   description: "Won iF Design Award (UX)!"
+
+- date: "08/2022"
+  icon: "🏆"
+  description: "Demoed Emerging Technologies at **SIGGRAPH'22** — won Best in Show Honorable Mention!"
+
+- date: "08/2022"
+  icon: "🖼️"
+  description: "Presented Poster at **SIGGRAPH'22** — selected poster in roundtable section!"
+
+- date: "06/2022"
+  icon: "📄"
+  description: "Paper accepted at **DIS'22**"
+
+- date: "04/2022"
+  icon: "✨"
+  description: "Attended first **CHI** in New Orleans — joined XR & Fabrication meetups"

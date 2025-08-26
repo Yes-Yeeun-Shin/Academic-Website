@@ -1,0 +1,28 @@
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="grid-header">
+          <h2>Computational Fabrication</h2>
+        </div>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      {% for item in site.gallery %}
+        <div class="gallery-item-wrapper">
+          <a href="#" class="gallery-card">
+            <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" class="gallery-card-image">
+            <div class="gallery-hover-content">
+              <h3 class="gallery-hover-title">{{ item.title }}</h3>
+            </div>
+          </a>
+          {% if item.keywords %}
+            <div class="gallery-keywords">
+              {{ item.keywords | join: " · " }}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

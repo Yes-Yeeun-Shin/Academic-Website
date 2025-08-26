@@ -1,0 +1,99 @@
+---
+layout: default
+body_classes: page-project
+---
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+
+      <!-- Left Column: Image Gallery -->
+      <div class="col-12 col-md-6 mb-6 mb-md-0">
+        <div class="gallery gallery-single-column">
+          {% for item in page.gallery %}
+            <div class="gallery-item">
+              <div class="gallery-image"><img src="{{ item.image | relative_url }}" alt="{{ item.caption }}"/></div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Right Column: Project Details -->
+      <div class="col-12 col-md-6">
+
+        <div class="project-heading">
+          <h1>{{ page.title }}</h1>
+        </div>
+
+        {% if page.categories %}
+          <div class="project-categories">
+          {% include framework/categories-badges.html 
+              categories=page.categories
+          %}
+          </div>
+        {% endif %}
+
+        <!-- Publication Buttons (publication_id가 있을 때만 표시) -->
+        {% if page.publication_id %}
+          {% assign publication = site.publications | where: "key", page.publication_id | first %}
+          {% if publication %}
+            <div class="links mt-2 mb-4">
+              {% if publication.abstract %}<a class="btn btn-sm btn-outline-primary abstract" role="button">Abstract</a>{% endif %}
+              {% if publication.doi %}<a href="https://doi.org/{{ publication.doi }}" class="btn btn-sm btn-outline-primary" target="_blank">DOI</a>{% endif %}
+              {% if publication.pdf %}<a href="{{ publication.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm btn-outline-primary" target="_blank">PDF</a>{% endif %}
+              {% if publication.video %}<a href="{{ publication.video }}" class="btn btn-sm btn-outline-primary" target="_blank">Video</a>{% endif %}
+            </div>
+            <!-- Hidden Abstract Block -->
+            {% if publication.abstract %}
+              <div class="abstract hidden mt-3">
+                <p>{{ publication.abstract }}</p>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endif %}
+        
+        <!-- Main Content (Markdown Body) -->
+        <div class="content mb-4">{{ content }}</div>
+
+        <!-- Details List -->
+        <div class="project-details-list">
+          {% if page.keywords %}
+          <div class="detail-item">
+            <strong>Keywords</strong>
+            <span>{{ page.keywords | join: ", " }}</span>
+          </div>
+          {% endif %}
+          {% if page.presented_at %}
+          <div class="detail-item">
+            <strong>Presented at</strong>
+            <span>{{ page.presented_at }}</span>
+          </div>
+          {% endif %}
+          {% if page.exhibition %}
+          <div class="detail-item">
+            <strong>Exhibition</strong>
+            <span>{{ page.exhibition }}</span>
+          </div>
+          {% endif %}
+          {% if page.awards %}
+          <div class="detail-item">
+            <strong>Awards</strong>
+            <span>
+              {% for award in page.awards %}
+                <a href="{{ award.url }}" target="_blank">{{ award.name }}</a><br>
+              {% endfor %}
+            </span>
+          </div>
+          {% endif %}
+          {% if page.role %}
+          <div class="detail-item">
+            <strong>Role</strong>
+            <span>{{ page.role }}</span>
+          </div>
+          {% endif %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

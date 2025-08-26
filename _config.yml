@@ -1,0 +1,299 @@
+# -------------------
+# Jekyll Config (merged & cleaned)
+# -------------------
+baseurl: ""
+url: ""
+permalink: pretty
+
+# Markdown & highlight
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    css_class: "highlight"
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      start_line: 1
+
+# Plugins (use v2 pagination; include scholar)
+plugins:
+  - jekyll-environment-variables
+  - jekyll-archives-v2
+  - jekyll-email-protect
+  - jekyll-feed
+  - jekyll-get-json
+  - jekyll-imagemagick
+  - jekyll-jupyter-notebook
+  - jekyll-link-attributes
+  - jekyll-minifier
+  - jekyll-paginate-v2
+  - jekyll-regex-replace
+  - jekyll-scholar       # ← 표준 표기 권장 (jekyll/scholar 대신)
+  - jekyll-sitemap
+  - jekyll-tabs
+  - jekyll-terser
+  - jekyll-toc
+  - jekyll-twitter-plugin
+  - jemoji
+
+# v2 Pagination (구버전 paginate/ paginate_path 제거)
+pagination:
+  enabled: true
+  per_page: 6
+  permalink: "/blog/page:num/"
+  sort_field: "date"
+  sort_reverse: true
+  title: ":title - page :num"
+  # collection: "posts"  # 기본이 posts라면 생략 가능
+
+# Collections
+collections_dir: collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:path/
+  posts:
+    output: true
+    permalink: /blog/:path/
+  gallery:
+    output: false
+
+# Pages defaults + sitemap defaults (한 배열로 병합)
+defaults:
+  - scope:
+      path: ""
+      type: "gallery" 
+    values:
+      layout: null  
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      weight: 999
+  - scope:
+      path: "images"
+    values:
+      image: true
+  - scope:
+      path: "categories"
+    values:
+      permalink: /category/:basename/
+  - scope:
+      path: "pages"
+    values:
+      permalink: /:basename/
+  - scope:
+      path: "assets"
+    values:
+      sitemap: false
+
+# SCSS
+sass:
+  style: compact
+
+# Include / Exclude / Keep (중복 제거 & 병합)
+include: ["_pages", "_scripts"]
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - netlify.toml
+  - bin/
+  - CONTRIBUTING.md
+  - CUSTOMIZE.md
+  - Dockerfile
+  - docker-compose.yml
+  - docker-compose-slim.yml
+  - FAQ.md
+  - INSTALL.md
+  - lighthouse_results/
+  - package.json
+  - package-lock.json
+  - _pages/about_einstein.md
+  - purgecss.config.js
+  - readme_preview/
+  - vendor
+keep_files:
+  - CNAME
+  - .nojekyll
+
+# Theme Config
+title: "Jekyll Curate"
+category_dir: category
+
+colors:
+  primary_bg: "#0d042b"
+  primary_bg_2: "#0d042b"
+  primary_bg_3: "#CDD9E4"
+  primary_text: "#fdfcf9"
+  base_bg: "#ffffff"
+  base_bg_2: "#F1F3F5"
+  base_bg_3: "#D2D9DF"
+  base_text: "#0d042b"
+  base_text_2: "#3b364c"
+  logo_text: "#0d042b"
+  header_text: "#0d042b"
+  primary_bg_dark: "#fdfcf9"
+  primary_bg_2_dark: "#fdfcf9"
+  primary_bg_3_dark: "#fdfcf9"
+  primary_text_dark: "#0b0326"
+  base_bg_dark: "#0b0326"
+  base_bg_2_dark: "#150c32"
+  base_bg_3_dark: "#251654"
+  base_text_dark: "#f5f5ec"
+  base_text_2_dark: "#929eaf"
+  logo_text_dark: "#fdfcf9"
+  header_text_dark: "#fdfcf9"
+
+fonts:
+  use_google_fonts: false
+  google_fonts_url: "https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,500;9..40,700&family=Fira+Mono&display=swap"
+  use_self_hosted_fonts: true
+  heading: "'Inter', sans-serif"
+  base: "'Inter', sans-serif"
+  monospace: "'Fira Mono'"
+  logo: "'DM Sans'"
+
+logo:
+  logo_text: "Jekyll Curate"
+  logo_image: assets/images/logo/logo.png
+  logo_image_mobile: assets/images/logo/logo-mobile.png
+  logo_image_invert: assets/images/logo/logo-invert.png
+  logo_image_invert_mobile: assets/images/logo/logo-invert-mobile.png
+  logo_image_desktop_height: "28px"
+  logo_image_desktop_width: "28px"
+  logo_image_mobile_height: "28px"
+  logo_image_mobile_width: "28px"
+  show_logo_image_on_mobile: true
+  show_logo_image_on_desktop: true
+  show_logo_text_on_mobile: false
+  show_logo_text_on_desktop: false
+
+header:
+  fixed: false
+
+open_graph:
+  meta_opengraph_type: "website"
+  meta_twitter_card: "summary"
+  meta_twitter_site: "@zerostaticio"
+  meta_twitter_creator: "@zerostaticio"
+
+darkmode:
+  enable_dark_mode: true
+  show_dark_mode_toggle_in_header: true
+  show_dark_mode_toggle_in_bottom: false
+  show_dark_mode_toggle_in_mobile_menu: true
+
+cookie_banner:
+  enabled: true
+  show_manage_cookies_at_bottom: true
+
+analytics:
+  google_analytics_id: ""
+  gtm_id: ""
+  plausible_data_domain: ""
+  umami_data_website_id: ""
+  umami_src: ""
+
+comments:
+  commento:
+    enabled: true
+  disqus:
+    shortname: ""
+
+# newsletter:
+#   mailchimp:
+#     form_action_url: "https://zerostatic.us21.list-manage.com/subscribe/post?u=798e19886b83aaab346734382&amp;id=f1c526a772&amp;f_id=0027e3e6f0"
+#     form_title: "Let's keep in touch"
+
+contact_form:
+  use_netlify_form: false
+  use_formspree_form: true
+  formspree_endpoint: https://formspree.io/f/moqyklqv
+  netlify_form_name: "contact"
+
+menu:
+  show_dropdown_items_in_mobile_menu: false
+  show_social_media_in_mobile_menu: true
+
+footer:
+  enable_footer: false
+  footer_title: "Jekyll Curate"
+  footer_description: "Curate is a creative portfolio for Jekyll by Zerostatic Themes."
+  enable_social_media_icons: true
+  enable_contact_details: false
+  enable_menu_footer_primary: true
+  enable_menu_footer_secondary: true
+  enable_menu_footer_tertiary: false
+  footer_primary_menu_title: "Our Projects"
+  footer_secondary_menu_title: "Company"
+  footer_tertiary_menu_title: "Other"
+
+bottom:
+  enable_bottom: true
+  enable_bottom_menu: false
+  copyright_text: "2025 © Yeeun Shin"
+  show_rss_icon: true
+
+# -------------------
+# Jekyll Scholar (migrated)
+# -------------------
+scholar:
+  last_name: [Shin]
+  first_name: [Yeeun]
+
+  style: apa
+  locale: en
+
+  source: /_bibliography/
+  bibliography: papers.bib
+  bibliography_template: bib
+  bibtex_filters: [latex, smallcaps, superscript]
+
+  replace_strings: true
+  join_strings: true
+
+  details_dir: bibliography
+  details_link: Details
+
+  query: "@*"
+  group_by: year
+  group_order: descending
+
+  type: "project"
+  repository: "publications"
+
+# Publication badges & options from al-folio
+enable_publication_badges:
+  altmetric: true
+  dimensions: true
+  google_scholar: true
+  inspirehep: true
+
+filtered_bibtex_keywords:
+  [abbr, abstract, additional_info, altmetric, annotation, arxiv, award, award_name,
+   bibtex_show, blog, code, google_scholar_id, html, inspirehep_id, pdf, poster, preview,
+   selected, slides, supp, video, website]
+
+# max_author_limit: 10
+more_authors_animation_delay: 10
+enable_publication_thumbnails: true
+
+# Extras from al-folio you said you want
+bib_search: true
+enable_math: true
+
+third_party_libraries:
+  download: false
+
+back_to_top: false
