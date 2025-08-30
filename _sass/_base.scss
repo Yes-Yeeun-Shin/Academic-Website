@@ -1800,3 +1800,20 @@ h2.thesis-title {
 .thesis-entry {
   margin-bottom: 2rem;
 }
+
+
+
+/* ==========================================================================
+   Homepage - Recent Publications Section Styles
+   ========================================================================== */
+
+.page-home .publications {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.page-home .publications ol.bibliography li {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0; 
+}

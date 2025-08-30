@@ -48,51 +48,28 @@ body_classes: page-home
   </div>
 {% endif %}
 
-
-<!-- ------------------ PROJECT --------------------------->
-{% assign cards = site.projects | sort: 'date' | reverse %}
-{% assign limit = page.projects.limit | default: 3 %}
-{% assign columns =  page.projects.columns | default: 3 %}
-{% capture columns %}col-lg-{{ 12 | divided_by:columns }}{% endcapture %}
-
-{% if cards.size > 0 %}
+<!-------------------- PUBLICATION ------------------------- -->
 <div class="section pt-0">
   <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-12">
+        <div class="grid-header">
+          <h2>Publications</h2>
+        </div>
 
-    <div class="row">
-        <!-- <div class="grid-header">
-          <h2>HCI RESEARCH</h2>
-        </div> -->
-      {% include framework/grid-header.html 
-        heading=page.projects.heading 
-        sub_heading=page.projects.sub_heading 
-      %}
-      {% for card in cards limit: limit %}
-      <div class="col-12 col-md-6 {{ columns }} mb-gutter mt-gutter {% if forloop.first %}mt-0{% endif %} {% if forloop.last %}mb-0{% endif %} mt-md-0">
-        {% include theme/cards/card-project.html
-          title=card.title
-          description=card.description
-          thumbnail=card.thumbnail
-          categories=card.categories
-          date=card.date
-          url=card.url
-          client=card.client
-        %}
-      </div>
-      {% endfor %}
-
-      {% include framework/grid-footer.html 
-        view_more_button_text=page.projects.view_more_button_text
-        view_more_button_link=page.projects.view_more_button_link
-        align="right"
-        icon="fa-arrow-right"
-      %}
-
+{% assign pub_page = site.pages | where: "name", "publications.md" | first %}
+    {% if pub_page %}
+    <div class="publications">
+        {% bibliography --query @*[keywords!=thesis] %}
     </div>
+    {% endif %}
+    
   </div>
 </div>
-{% endif %}
-<!-------------------- PROJECT ------------------------- -->
+  </div>
+</div>
+<!-------------------- PUBLICATION ------------------------- -->
+
 
 {% assign cards = site.posts | sort: 'date' | reverse %}
 {% assign limit = page.posts.limit | default: 3 %}
