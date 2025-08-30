@@ -771,28 +771,28 @@ footer.sticky-bottom {
       }
 
       .title {
-        font-weight: bolder;
+        font-weight: 600;
         font-size: 1.2rem;
         margin-bottom: 0.1rem !important;
       }
 
         .award-info {
+          margin-top: 0.5rem;
           color: var(--global-theme-color);
-          font-size: 1.1rem !important;  
-          font-weight: 700 !important;  
-          margin-top: 0.3rem;
-          margin-bottom: 0.3rem;
+          font-size: 0.9rem !important;  
+          font-weight: 700 !important;
+          line-height: 1.6;  
         }
 
         .award-info a {
-          color: inherit; /* 부모(.award-info)의 색상을 그대로 상속받습니다. */
-          text-decoration: none; /* 기본 밑줄을 제거합니다. */
+          color: inherit; 
+          text-decoration: none; 
+          border-bottom: 1px solid var(--global-divider-color);
+          transition: border-color 0.2s ease;
         }
 
         .award-info a:hover {
-            border-bottom-style: dashed;
-
-
+            border-color: var(--global-theme-color);
         }
 
 
@@ -800,12 +800,12 @@ footer.sticky-bottom {
       .author,
       .periodical {
         font-size: 1.1rem;
-        margin-bottom: 0.25rem !important;
       }
 
       .author {
           display: flex;      
-          flex-wrap: wrap;    
+          flex-wrap: wrap;  
+          margin-bottom: 0.2rem !important;  
         a {
           border-bottom: 1.1px dashed var(--global-theme-color);
 
@@ -844,6 +844,7 @@ footer.sticky-bottom {
           margin-left: 0;
           margin-right: 0.25rem;
           text-decoration: none;
+          border-radius: 3px; 
 
           &:hover {
             // color: var(--global-theme-color);
@@ -1536,8 +1537,8 @@ a.btn:hover {
    ========================================================================== */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem 2rem; /* 세로(row) 간격 3rem, 가로(column) 간격 2rem */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* 4열(250), 3열(300) */
+  gap: 0.5rem 1.5rem; /* 세로(row), 가로(column) 간격 */
 }
 
 .gallery-card {
@@ -1611,7 +1612,7 @@ a.btn:hover {
 }
 
 .hero-title {
-  font-size: 2.8rem;
+  font-size: 2.3rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   // text-decoration: underline;               
@@ -1629,10 +1630,11 @@ a.btn:hover {
 .hero-description a {
   text-decoration: none; 
   font-weight: 700;
+  color: var(--global-text-color) !important;
 }
 
 .hero-description a:hover {
-  color: var(--global-theme-color);
+  color: var(--global-theme-color) !important;
   text-decoration: none;
 }
 
@@ -1643,11 +1645,12 @@ a.btn:hover {
   font-weight: 700;
   text-decoration: none;
   font-size: 1.1rem;
-  transition: opacity 0.3s ease;
+  transition: color 0.3s ease; 
+  color: var(--global-text-color) !important;
 }
 
 .hero-links a:hover {
-  color: var(--global-theme-color);
+  color: var(--global-theme-color) !important;
   text-decoration: none;
 }
 
@@ -1763,4 +1766,37 @@ a.btn:hover {
   color: var(--global-theme-color);
   display: block; 
   margin-bottom: 0rem; 
+}
+
+/* ==========================================================================
+   Custom Logo Text Style
+   ========================================================================== */
+
+.logo-text {
+  font-weight: 700 !important;
+  font-size: 1.4rem !important;
+}
+
+.logo-text a:hover {
+  color: var(--global-theme-color);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Thesis Section Styles
+   ========================================================================== */
+.thesis-section {
+  margin-top: 0rem; 
+  border-top: 1px solid var(--global-divider-color);
+  padding-top: 2rem;
+}
+
+h2.thesis-title {
+  font-size: 2.0rem;
+  font-weight: 700 !important; 
+  margin-bottom: 2rem;
+}
+
+.thesis-entry {
+  margin-bottom: 2rem;
 }

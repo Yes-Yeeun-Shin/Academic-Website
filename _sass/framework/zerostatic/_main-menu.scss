@@ -32,7 +32,8 @@
         text-decoration: none;
         color: inherit;
         &:hover {
-          text-decoration: underline;
+          color: var(--global-theme-color);
+          text-decoration: none;
         }
         @include media-breakpoint-up(lg) {
           padding: 6px 10px 6px 10px;

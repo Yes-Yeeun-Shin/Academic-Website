@@ -48,6 +48,8 @@ body_classes: page-home
   </div>
 {% endif %}
 
+
+<!-- ------------------ PROJECT --------------------------->
 {% assign cards = site.projects | sort: 'date' | reverse %}
 {% assign limit = page.projects.limit | default: 3 %}
 {% assign columns =  page.projects.columns | default: 3 %}
@@ -90,6 +92,7 @@ body_classes: page-home
   </div>
 </div>
 {% endif %}
+<!-------------------- PROJECT ------------------------- -->
 
 {% assign cards = site.posts | sort: 'date' | reverse %}
 {% assign limit = page.posts.limit | default: 3 %}

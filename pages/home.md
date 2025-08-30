@@ -14,7 +14,7 @@ hero:
   description: |
     Hello! I'm currently working as a UX researcher at [Ridi Books](https://ridicorp.com/){:target="_blank"}, an online entertainment contents startup company in South Korea.
 
-    I recently graduated my masters at KAIST, department of Industrial Design working in [DxD Lab](http://dxd.kaist.ac.kr/){:target="_blank"} under [Prof. Hwajung Hong](https://scholar.google.com/citations?user=qc6CJjYAAAAJ){:target="_blank"}. I also graduated from Hongik University majoring in Interior Architecture with special interest in Human-Space Interaction. My current interests are in Human-Algorithm Interaction with special interest in the field of social media and entertainment contents.
+    I recently graduated my masters at KAIST, department of Industrial Design working in [DxD Lab](http://dxd.kaist.ac.kr/){:target="_blank"} under [Prof. Hwajung Hong](https://scholar.google.com/citations?user=qc6CJjYAAAAJ){:target="_blank"}. I also graduated from Hongik University majoring in Interior Architecture with special interest in Human-Space Interaction. My current interests are in Human-Algorithm Interaction with special interest in the field of social media and entertainment contents. My current interests are in Human-Algorithm Interaction with special interest in the field of social media and entertainment contents.
 ################## HERO ##################
 
 projects:

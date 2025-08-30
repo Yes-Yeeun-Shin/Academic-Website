@@ -1,5 +1,24 @@
 ---
 ---
+
+{% if entry.type == 'mastersthesis' %}
+
+  <!-- ================== THESIS LAYOUT ================== -->
+  <div class="thesis-entry">
+    <div class="title h5 mb-2">{{ entry.title }}</div>
+    <div class="periodical">
+      <em>{% if entry.school %}{{ entry.school }} M.S. Thesis{% else %}Master's Thesis{% endif %}</em>, {{ entry.year }}.
+    </div>
+    <div class="links mt-2">
+      {% if entry.slides %}<a href="{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm btn-outline-primary" target="_blank">Slides</a>{% endif %}
+      {% if entry.pdf %}<a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm btn-outline-primary" target="_blank">PDF</a>{% endif %}
+      {% if entry.library %}<a href="{{ entry.library }}" class="btn btn-sm btn-outline-primary" target="_blank">Library</a>{% endif %}
+    </div>
+  </div>
+
+{% else %}
+
+  <!-- ================== REGULAR PUBLICATION LAYOUT ================== -->
 <div class="publication-entry"> 
 <div class="row mb-1 align-items-start">
   {% if site.enable_publication_thumbnails %}
@@ -41,15 +60,7 @@
   <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-7{% else %}col-sm-10{% endif %} pe-0">
     <!-- Title -->
     <div class="title h5 mb-2">{{ entry.title }}</div>
-  {% if entry.award %}
-    <div class="award-info">
-      {% if entry.award_url %}
-        <a href="{{ entry.award_url }}" target="_blank" rel="noopener noreferrer">{{ entry.award }}</a>
-      {% else %}
-          {{ entry.award }}
-      {% endif %}
-    </div>
-    {% endif %}
+
     <!-- Author -->
     <div class="author mb-2">
       {% assign author_array_size = entry.author_array | size %}
@@ -78,7 +89,6 @@
           {% endfor %}
         {% endif %}
 
-        <!-- [수정 1] 쉼표 뒤 공백 문제를 해결하기 위해 &nbsp; 사용 -->
         {% if forloop.first == false %}
           {% if forloop.length > 2 %}
             {% if forloop.last %},&nbsp;and&nbsp;{% else %},&nbsp;{% endif %}
@@ -118,7 +128,6 @@
     {% if entry.type == 'article' %}
       {% capture entrytype %}<em>{{ entry.journal }}</em>{% endcapture %}
     {% elsif proceedings contains entry.type %}
-      <!-- [수정 2] "In "을 삭제했습니다. -->
       {% capture entrytype %}<em>{{ entry.booktitle }}</em>{% endcapture %}
     {% elsif thesis contains entry.type %}
       {% capture entrytype %}<em>{{ entry.school }}</em>{% endcapture %}
@@ -147,7 +156,7 @@
     </div>
 
     <!-- Links/Buttons -->
-    <div class="links mt-2">
+    <div class="links mt-1">
       {% if entry.abstract %}
         <a class="btn btn-sm btn-outline-primary abstract" role="button" onclick="">Abstract</a>
       {% endif %}
@@ -212,7 +221,16 @@
       {% if entry.website %}
         <a href="{{ entry.website }}" class="btn btn-sm btn-outline-primary" role="button" target="_blank">Website</a>
       {% endif %}
+      {% if entry.library %}<a href="{{ entry.library }}" class="btn btn-sm btn-outline-primary" target="_blank">Library</a>{% endif %}
+      
     </div>
+
+    {% if entry.award %}
+     <div class="award-info">
+        {{ entry.award | markdownify | remove: '<p>' | remove: '</p>' }}
+      </div>
+    {% endif %}
+
 
     {% if entry.abstract %}
       <!-- Hidden abstract block -->
@@ -236,9 +254,10 @@
             <source src="{{ entry.video }}" type="video/mp4">
               Your browser does not support the video tag.
           </video>
-        </div>
+            </div>
+         </div>
+        {% endif %}
       </div>
-    {% endif %}
-  </div>
-</div>
+    </div>
+  {% endif %}
 </div>

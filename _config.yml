@@ -132,7 +132,7 @@ title: "Jekyll Curate"
 category_dir: category
 
 colors:
-  primary_bg: "#0d042b"
+  primary_bg: "#ffffff"
   primary_bg_2: "#0d042b"
   primary_bg_3: "#CDD9E4"
   primary_text: "#fdfcf9"
@@ -162,10 +162,10 @@ fonts:
   heading: "'Inter', sans-serif"
   base: "'Inter', sans-serif"
   monospace: "'Fira Mono'"
-  logo: "'DM Sans'"
+  logo: "'Inter', sans-serif"
 
 logo:
-  logo_text: "Jekyll Curate"
+  logo_text: "YEEUN SHIN."
   logo_image: assets/images/logo/logo.png
   logo_image_mobile: assets/images/logo/logo-mobile.png
   logo_image_invert: assets/images/logo/logo-invert.png
@@ -174,10 +174,10 @@ logo:
   logo_image_desktop_width: "28px"
   logo_image_mobile_height: "28px"
   logo_image_mobile_width: "28px"
-  show_logo_image_on_mobile: true
-  show_logo_image_on_desktop: true
-  show_logo_text_on_mobile: false
-  show_logo_text_on_desktop: false
+  show_logo_image_on_mobile: false
+  show_logo_image_on_desktop: false
+  show_logo_text_on_mobile: true
+  show_logo_text_on_desktop: true
 
 header:
   fixed: false
