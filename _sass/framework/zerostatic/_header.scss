@@ -5,10 +5,11 @@
   color: var(--color-header-text);
   .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     height: var(--header-height);
     .logos {
+      margin-right: auto;
     }
   }
   a {
