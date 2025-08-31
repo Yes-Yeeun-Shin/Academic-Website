@@ -1,8 +1,8 @@
 ---
-title: "Fashion Ecommerce App"
-image: "/assets/img/gallery/6.jpg" 
+title: "Material Simulation"
+image: "/assets/img/fabrication/Simulation.png" 
 keywords:
-  - Keyword
-  - Keyword
-  - Keyword
+  - Simulating material mechanics with ABAQUS
+  # - Keyword
+  # - Keyword
 ---

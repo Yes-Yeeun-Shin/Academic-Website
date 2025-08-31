@@ -12,6 +12,8 @@
 
     <link href="{{ '/assets/css/main.css' | relative_url }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/venobox@2.1.10/dist/venobox.min.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,6 +77,20 @@
       // 브라우저 창 크기가 변경될 때마다 다시 실행
       window.addEventListener('resize', matchHeights);
     }
+  });
+</script>
+
+<!-- VenoBox Lightbox JS -->
+<script src="https://unpkg.com/venobox@2.1.10/dist/venobox.min.js" defer></script> 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    new VenoBox({
+      selector: '.venobox',
+      numeration: true,
+      infinigall: true,
+      share: false,
+      spinner: 'rotating-plane'
+    });
   });
 </script>
 

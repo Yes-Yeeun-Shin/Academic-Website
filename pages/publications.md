@@ -2,7 +2,7 @@
 layout: basic
 title: Publications
 permalink: /publications/
-description: Peer-reviewed HCI publications. (* equal contribution).
+description: Peer-reviewed publications. * denotes equal contribution.
 ---
 
 <div class="publications">

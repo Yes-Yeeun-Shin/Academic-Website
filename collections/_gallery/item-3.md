@@ -1,8 +1,8 @@
 ---
-title: "Fashion Ecommerce App"
-image: "/assets/img/gallery/3.jpg" 
+title: "Material Perception Analysis"
+image: "/assets/img/fabrication/Perception.png" 
 keywords:
-  - Keyword
-  - Keyword
-  - Keyword
+  - Visual cues shaping material perception (SPSS)
+  # - Keyword
+  # - Keyword
 ---

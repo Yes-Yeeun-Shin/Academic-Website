@@ -10,7 +10,7 @@ permalink: "/"
 ################## HERO ##################
 hero:
   title_name: "Yeeun Shin"
-  image: "assets/img/prof_pic.jpg" 
+  image: "assets/img/profile.png" 
   description: |
     Hello! I'm currently working as a UX researcher at [Ridi Books](https://ridicorp.com/){:target="_blank"}, an online entertainment contents startup company in South Korea.
 

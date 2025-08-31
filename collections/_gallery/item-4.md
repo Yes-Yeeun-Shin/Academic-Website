@@ -1,8 +1,8 @@
 ---
-title: "Fashion Ecommerce App"
-image: "/assets/img/gallery/4.jpg" 
+title: "Modular Furniture Fabrication"
+image: "/assets/img/fabrication/Modular.png" 
 keywords:
-  - Keyword
-  - Keyword
-  - Keyword
+  - Modular fabrication with Rhino and CNC
+  # - Keyword
+  # - Keyword
 ---

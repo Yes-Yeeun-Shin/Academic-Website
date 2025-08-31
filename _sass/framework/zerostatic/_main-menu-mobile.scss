@@ -32,7 +32,16 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    a, a:visited {
+    color: var(--global-text-color) !important;
+    }
+
+    i {
+    color: var(--global-text-color) !important;
   }
+  }
+  
   .menu-main-close {
     color: var(--color-primary-text);
     font-size: 30px;
@@ -139,15 +148,18 @@
     background: currentcolor;
     transform: translate(-50%, -50%);
     transition: transform 0.25s ease-in-out;
+    
   }
   &.is-active {
     border-color: transparent;
     color: var(--color-primary-text);
     &::before {
       transform: translate(-50%, -50%) rotate(45deg);
+      color: var(--global-text-color) !important;
     }
     &::after {
       transform: translate(-50%, -50%) rotate(-45deg);
+      color: var(--global-text-color) !important;
     }
   }
 }

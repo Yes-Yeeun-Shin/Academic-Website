@@ -2,18 +2,28 @@
 
 /* Homepage width adjustment */
 .page-home .container {
-  max-width: 1200px; /* Adjust this value as needed */
+  max-width: 1070px; /* Adjust this value as needed */
   margin: 0 auto;
 }
 
 /* Main menu width adjustment */
 .menu-main {
-  max-width: 1200px; /* Adjust this value as needed */
+  max-width: 1070px; /* Adjust this value as needed */
   margin: 0 auto;
 }
 
 /* Header container width adjustment */
 .header .container {
-  max-width: 1200px;
+  max-width: 1070px;
   margin: 0 auto;
+}
+
+/* Reduce gap between menu and dark mode switch */
+.header .dark-mode-switcher {
+  margin-left: -10px; /* Adjust this value as needed (can be negative) */
+}
+
+/* Push menu to the right */
+.menu-main {
+  margin-left: auto;
 }

@@ -1,8 +1,8 @@
 ---
-title: "Fashion Ecommerce App"
-image: "/assets/img/gallery/1.jpg" 
+title: "Creative Coding"
+image: "/assets/img/fabrication/code_art.png" 
 keywords:
-  - Keyword
-  - Keyword
-  - Keyword
+  - Drawing with Python in Processing
+  # - 
+  # - 
 ---

@@ -59,7 +59,8 @@ collections:
     output: true
     permalink: /blog/:path/
   gallery:
-    output: false
+    output: true
+    permalink: /gallery/:path/ #
 
 # Pages defaults + sitemap defaults (한 배열로 병합)
 defaults:
@@ -128,7 +129,7 @@ keep_files:
   - .nojekyll
 
 # Theme Config
-title: "Jekyll Curate"
+title: "Yeeun Shin"
 category_dir: category
 
 colors:

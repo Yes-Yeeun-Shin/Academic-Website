@@ -29,12 +29,12 @@ main:
   # - name: Blog
   #   url: /blog/
   #   weight: 2
-  - name: PUBLICATIONS
-    url: /publications/
-    weight: 3
   - name: ABOUT
     url: /about/
-    weight: 4
+    weight: 3
+  - name: PUBLICATIONS
+    url: /publications/
+    weight: 4S
   - name: CV 
     url: /assets/pdf/yeeun_shin_cv.pdf
     weight: 5

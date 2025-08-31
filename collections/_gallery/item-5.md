@@ -1,8 +1,8 @@
 ---
-title: "Fashion Ecommerce App"
-image: "/assets/img/gallery/5.jpg" 
+title: "Graphic Installation"
+image: "/assets/img/fabrication/Graphic.png" 
 keywords:
-  - Keyword
-  - Keyword
-  - Keyword
+  - Large-scale public illustration
+  # - Keyword
+  # - Keyword
 ---

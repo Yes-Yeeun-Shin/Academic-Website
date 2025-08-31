@@ -68,3 +68,18 @@ html[data-bs-theme='dark'] {
   "tabler-icons/tabler-icons-filled.scss",
   "tabler-icons/tabler-icons-outline.scss",
   "style";
+
+  /* -----------------------------------------
+ * Header Alignment Fix
+ * ----------------------------------------- */
+#header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* 메뉴와 다크모드 스위치 사이의 간격 */
+}

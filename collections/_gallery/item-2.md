@@ -1,8 +1,8 @@
 ---
-title: "Fashion Ecommerce App"
-image: "/assets/img/gallery/7.jpg" 
+title: "Parametric Design"
+image: "/assets/img/fabrication/parametric_art.png" 
 keywords:
-  - Keyword
-  - Keyword
-  - Keyword
+  - Algorithmic drawing with L-systems
+  # - Keyword
+  # - Keyword
 ---

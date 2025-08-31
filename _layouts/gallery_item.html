@@ -1,0 +1,58 @@
+---
+layout: default
+body_classes: page-project
+---
+
+<div class="section">
+  <div class="container">
+    
+    <!-- =================================================
+    1. Section (Text on Left, Image Grid on Right)
+    ================================================= -->
+    <div class="row justify-content-center">
+
+      <!-- Left Column: Title, Subtitle, Main Content -->
+      <div class="col-12 col-md-4">
+        {% if page.title %}
+          <div class="project-heading">
+            <h1>{{ page.title }}</h1>
+          </div>
+        {% endif %}
+
+        {% if page.subtitle %}
+          <div class="project-categories">
+            <p>{{ page.subtitle }}</p>
+          </div>
+        {% endif %}
+        
+        <!-- (Markdown Body) -->
+        <div class="content">{{ content }}</div>
+      </div>
+
+      <!-- Right Column: Image Grid Gallery -->
+      <div class="col-12 col-md-6 mt-5 mt-md-0">
+        {% if page.detail_gallery %}
+          <div class="detail-gallery-grid-right">
+            {% for image_path in page.detail_gallery %}
+              <a href="{{ image_path | relative_url }}" class="venobox" data-gall="gallery-detail">
+                <img src="{{ image_path | relative_url }}" alt="Gallery image">
+              </a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Contents -->
+    {% if page.extended_content %}
+    <div class="row justify-content-center mt-5 pt-5 border-top">
+      <div class="col-12 col-lg-10">
+        <div class="gallery-item-content">
+          {{ page.extended_content | markdownify }}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</div>
