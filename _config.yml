@@ -296,5 +296,13 @@ enable_math: true
 
 third_party_libraries:
   download: false
+  venobox:
+    version: 2.1.8
+    url:
+      css: https://cdn.jsdelivr.net/npm/venobox@2.1.8/dist/venobox.min.css
+      js: https://cdn.jsdelivr.net/npm/venobox@2.1.8/dist/venobox.min.js
+    integrity:
+      css: sha384-AY1r9X5t8vI/2f2IqI28oSr1y6Q2i2ZlftZOJ3O90i0Am222dM6hW2v2iTBAZ2Te
+      js: sha384-vB3ATB2oD3brpBBd+G/a7tC9pcqA42Mv/T0sM32a2d0LzB2l3yZf/30hJbJ2iK2l
 
 back_to_top: false

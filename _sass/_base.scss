@@ -1854,8 +1854,8 @@ h2.thesis-title {
 /* 오른쪽 이미지 그리드 */
 .detail-gallery-grid-right {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2열 그리드 */
-  gap: 1rem;
+  grid-template-columns: repeat(var(--gallery-columns, 2), 1fr);
+  gap: 0.2rem;
 }
 .detail-gallery-grid-right a {
   display: block;
@@ -1879,6 +1879,69 @@ h2.thesis-title {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    margin: 2rem 0;
+    margin: 0;
   }
+}
+
+/* ==========================================================================
+   Simple Lightbox Styles
+   ========================================================================== */
+#simple-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85); /* 반투명 검은 배경 */
+  z-index: 9999;
+
+  /* 팝업 이미지를 정중앙에 배치 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* 초기 상태: 숨겨져 있음 */
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.3s, opacity 0.3s ease;
+}
+
+#simple-lightbox.active {
+  /* 활성화 상태: 보여짐 */
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+#lightbox-image {
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================================================
+   Dynamic Image Grid with Captions
+   ========================================================================== */
+.dynamic-image-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns, 2), 1fr);
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.grid-figure {
+  margin: 0;
+}
+
+.grid-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.grid-figure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--global-text-color-light);
 }

@@ -11,9 +11,7 @@
     {% include framework/favicon.html %}
 
     <link href="{{ '/assets/css/main.css' | relative_url }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/venobox@2.1.10/dist/venobox.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"> 
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,19 +78,32 @@
   });
 </script>
 
-<!-- VenoBox Lightbox JS -->
-<script src="https://unpkg.com/venobox@2.1.10/dist/venobox.min.js" defer></script> 
+<div id="simple-lightbox">
+  <img id="lightbox-image" src="" alt="Lightbox image">
+</div>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    new VenoBox({
-      selector: '.venobox',
-      numeration: true,
-      infinigall: true,
-      share: false,
-      spinner: 'rotating-plane'
-    });
+    const lightbox = document.getElementById('simple-lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+
+    if (lightbox && lightboxImage) {
+      document.querySelectorAll('a[href$=".jpg"], a[href$=".png"], a[href$=".gif"], a[href$=".jpeg"], a[href$=".webp"]').forEach(link => {
+        if (link.closest('.detail-gallery-grid-right') || link.closest('.gallery-item-content')) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault(); 
+            lightboxImage.src = this.href;
+            lightbox.classList.add('active');
+          });
+        }
+      });
+
+      lightbox.addEventListener('click', function() {
+        this.classList.remove('active');
+      });
+    }
   });
 </script>
+
 
 {% include framework/google-analytics.html %}
 {% include framework/plausible-analytics.html %}

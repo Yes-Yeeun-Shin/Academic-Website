@@ -1,0 +1,18 @@
+{% assign grid_data = include.grid | yamlify %}
+{% assign grid_columns = grid_data.columns | default: 2 %}
+{% assign grid_items = grid_data.items %}
+
+{% if grid_items %}
+  <div class="dynamic-image-grid" style="--grid-columns: {{ grid_columns }};">
+    {% for item in grid_items %}
+      <figure class="grid-figure">
+        <a href="{{ item.image | relative_url }}" class="venobox" data-gall="page-gallery-{{ page.title | slugify }}">
+          <img src="{{ item.image | relative_url }}" alt="{{ item.caption }}">
+        </a>
+        {% if item.caption %}
+          <figcaption>{{ item.caption }}</figcaption>
+        {% endif %}
+      </figure>
+    {% endfor %}
+  </div>
+{% endif %}
