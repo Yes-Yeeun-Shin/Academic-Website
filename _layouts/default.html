@@ -87,8 +87,8 @@
     const lightboxImage = document.getElementById('lightbox-image');
 
     if (lightbox && lightboxImage) {
-      document.querySelectorAll('a[href$=".jpg"], a[href$=".png"], a[href$=".gif"], a[href$=".jpeg"], a[href$=".webp"]').forEach(link => {
-        if (link.closest('.detail-gallery-grid-right') || link.closest('.gallery-item-content')) {
+      document.querySelectorAll('a[href$=".jpg"], a[href$=".png"], a[href$=".gif"], a[href$=".jpeg"], a[href$=".webp"], a[href$=".JPG"]').forEach(link => {
+        if (link.closest('.detail-gallery-grid-right') || link.closest('.gallery-item-content') || link.closest('.dynamic-image-grid')) {
           link.addEventListener('click', function(e) {
             e.preventDefault(); 
             lightboxImage.src = this.href;
@@ -103,6 +103,10 @@
     }
   });
 </script>
+
+
+
+
 
 
 {% include framework/google-analytics.html %}

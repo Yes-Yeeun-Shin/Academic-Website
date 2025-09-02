@@ -47,24 +47,27 @@ images:
     </div>
 
     <!-- Contents -->
-    {% if page.extended_content %}
-    <div class="row justify-content-center mt-5 pt-5 border-top">
-      <div class="col-12 col-lg-10">
-        <div class="gallery-item-content">
-          {{ page.extended_content | markdownify }}
-        </div>
-      </div>
-    </div>
-    {% endif %}
+    {% if page.content_blocks %}
+  <div class="row justify-content-center mt-5 pt-5 border-top">
+    <div class="col-12 col-lg-10">
+      
+      {% for block in page.content_blocks %}
 
-    <!-- img grid -->
-    {% if page.image_grid %}
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-10">
-          {% include framework/image_grid.html grid=page.image_grid %}
-        </div>
-      </div>
-    {% endif %}
+        {% if block.type == 'markdown' %}
+          <div class="gallery-item-content">
+            {{ block.content | markdownify }}
+          </div>
+        {% endif %}
+        
+        {% if block.type == 'image_grid' %}
+          {% include framework/image_grid.html grid=block.grid %}
+        {% endif %}
+
+      {% endfor %}
+
+    </div>
+  </div>
+{% endif %}
 
   </div>
 </div>
