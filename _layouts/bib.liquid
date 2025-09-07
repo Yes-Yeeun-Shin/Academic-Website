@@ -59,7 +59,13 @@
   <!-- Entry bib key -->
   <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-7{% else %}col-sm-10{% endif %} pe-0">
     <!-- Title -->
-    <div class="title h5 mb-2">{{ entry.title }}</div>
+    <div class="title h5 mb-2">
+      {% if entry.project_page %}
+        <a href="{{ entry.project_page | relative_url }}">{{ entry.title }}</a>
+      {% else %}
+        {{ entry.title }}
+      {% endif %}
+    </div>
 
     <!-- Author -->
     <div class="author mb-2">
@@ -222,6 +228,12 @@
         <a href="{{ entry.website }}" class="btn btn-sm btn-outline-primary" role="button" target="_blank">Website</a>
       {% endif %}
       {% if entry.library %}<a href="{{ entry.library }}" class="btn btn-sm btn-outline-primary" target="_blank">Library</a>{% endif %}
+
+      {% if entry.project_page %}
+        <a href="{{ entry.project_page | relative_url }}" class="btn btn-sm btn-outline-primary">
+          <i class="fas fa-globe"></i> Page
+        </a>
+      {% endif %}
       
     </div>
 

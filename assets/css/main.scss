@@ -67,7 +67,9 @@ html[data-bs-theme='dark'] {
   "tabler-icons/tabler-icons.scss",
   "tabler-icons/tabler-icons-filled.scss",
   "tabler-icons/tabler-icons-outline.scss",
+  "publication",
   "style";
+
 
   /* -----------------------------------------
  * Header Alignment Fix
@@ -83,3 +85,4 @@ html[data-bs-theme='dark'] {
   align-items: center;
   gap: 20px; /* 메뉴와 다크모드 스위치 사이의 간격 */
 }
+

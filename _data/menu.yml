@@ -29,14 +29,14 @@ main:
   # - name: Blog
   #   url: /blog/
   #   weight: 2
-  - name: ABOUT
-    url: /about/
-    weight: 3
+  # - name: ABOUT
+  #   url: /about/
+  #   weight: 3
   - name: PUBLICATIONS
     url: /publications/
-    weight: 4S
+    weight: 4
   - name: CV 
-    url: /assets/pdf/yeeun_shin_cv.pdf
+    url: /assets/pdf/CV__Yeeun_Shin__2025.pdf
     weight: 5
   # - name: Contact
   #   url: /contact/

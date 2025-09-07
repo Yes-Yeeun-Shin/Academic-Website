@@ -1,0 +1,266 @@
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.footer .icon-link {
+    font-size: 10px;
+    color: #0000003b;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.hero:first-child .hero-body {
+  padding-bottom: 0rem;
+}
+
+
+.teaser {
+  font-family: 'Inter', sans-serif;
+}
+
+.publication-banner {
+  max-height: parent;
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.hero.is-light {
+    background-color: #F1F3F5;
+}
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ==========================================================================
+   Custom Carousel Style Adjustments
+   ========================================================================== */
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 3px;
+  overflow: hidden;
+  padding: 3px;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+.slider-pagination .slider-page {
+  background: #D2D9DF;
+}
+
+.results-carousel .slider-item {
+  padding: 0px;
+}
+
+.results-carousel .slider-item img {
+  border-radius: 8px; 
+  width: 100%;
+  height: auto;
+}
+
+.eql-cntrb {
+  font-size: smaller;
+}
+
+/* --- Custom Styles Integrated from _publication.scss --- */
+
+/* Content Width */
+.container.is-max-desktop,
+.container {
+  max-width: 1100px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Abstract Box */
+.abstract-box {
+  background-color: #F1F3F5;
+  padding: 1.5rem 2.5rem;
+  border-radius: 10px;
+}
+
+.abstract-box .title {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+}
+
+.abstract-box .content {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* Header & Title Block */
+.publication-conference {
+  color: #4B41D8; 
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+}
+
+.publication-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 4rem;
+  letter-spacing: -2px;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: 1.8rem;
+  /* color: #000000e5;  */
+}
+
+.publication-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Authors Block */
+.publication-authors {
+  margin: 0rem;
+}
+
+.publication-authors .author-block {
+  color: #555 !important;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.publication-authors a {
+  color: #555 !important;
+  border-bottom: 1px solid #dbdbdb;
+  margin-bottom: 0rem;
+}
+
+.publication-authors a:hover {
+  color: #4B41D8 !important;
+  border-bottom: 1px solid #4B41D8;
+  text-decoration: none;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+/* Buttons */
+.publication-links .button.is-dark {
+  background-color: #ffffff;
+  border: 1.5px solid #0d042b;
+  border-radius: 6px;
+  margin-right: 0.3rem;
+  font-size: 0.9rem;
+  color:#000
+}
+
+.publication-links .button.is-dark:hover {
+  background-color: #4B41D8;
+}
+
+.publication-links .button.is-dark:hover span,
+.publication-links .button.is-dark:hover i {
+  color: #ffffff !important;
+}
+
+/* Teaser Video Padding Fix */
+.teaser .hero-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ===Custom Spacing Adjustments======= */
+
+.content-block {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.content-block:first-child {
+  margin-top: 0;
+}
+.content-block:last-child {
+  margin-bottom: 0;
+}
+
+
+.content-block-image {
+  margin-bottom: 3rem; 
+}
+
+.content-block-main-heading {
+  margin-top: 5rem !important;
+}
+
+.content-block-main-heading:first-child {
+  margin-top: 0rem !important;
+}
+
+.content blockquote p {
+  font-size: 0.9rem;
+  line-height: 1.4; 
+}
+
+.column .title.is-4,
+.column .title.is-5 {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0rem !important; 
+}
+
+/* ==========================================================================
+   Custom Footer Styles
+   ========================================================================== */
+
+.footer {
+  /* padding: top, left-right, bottom */
+  padding: 2rem 1.5rem 2rem;
+  background-color: #fafafa;
+}
+
+.footer .content p {
+  font-size: 0.8rem;
+  color: #7a7a7a42;
+}
+
+.footer a {
+  color: #5555554b;
+}
+
+.footer a:hover {
+  color: #000;
+}

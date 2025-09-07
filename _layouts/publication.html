@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta property="og:title" content="{{ page.title }}"/>
+  <meta property="og:description" content="{{ page.description | default: site.description }}"/>
+  <meta property="og:url" content="{{ page.url | absolute_url }}"/>
+  <meta property="og:image" content="{{ site.baseurl }}/{{ page.banner_image }}"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+  <meta name="twitter:image" content="{{ site.baseurl }}/{{ page.banner_image }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="{{ page.keywords | join: ', ' }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ page.title }}</title>
+  <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/assets/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/bulma.min.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/index.css">
+  <!-- <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="{{ site.baseurl }}/assets/js/fontawesome.all.min.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/bulma-carousel.min.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/bulma-slider.min.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/index.js"></script>
+</head>
+<body class="publication-page-body">
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          {% if page.conference %}
+            <div class="publication-conference is-size-6-mobile">{{ page.conference }}</div>
+          {% endif %}
+
+          <h1 class="title is-1 publication-title is-size-3-mobile">{{ page.title }}</h1>
+
+          {% if page.subtitle %}
+            <h2 class="subtitle is-3 publication-subtitle is-size-5-mobile">{{ page.subtitle }}</h2>
+          {% endif %}
+
+          <div class="is-size-5 publication-authors">
+            {% if page.authors %}
+              {% for author in page.authors %}
+              <span class="author-block">
+                {% if author.link %}<a href="{{ author.link }}" target="_blank">{% endif %}
+                  {{ author.name }}
+                {% if author.link %}</a>{% endif %}
+                {% if author.equal_contrib %}<sup>*</sup>{% endif %}
+              </span>{% unless forloop.last %}, {% endunless %}
+              {% endfor %}
+            {% endif %}
+            {% if page.equal_contrib_notice %}<span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>{% endif %}
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              {% if page.paper_url %}
+              <span class="link-block">
+                <a href="{{ page.paper_url }}" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-acm"></i></span><span>Paper</span>
+                </a>
+              </span>
+              {% endif %}
+              
+              {% if page.code_url %}
+              <span class="link-block">
+                <a href="{{ page.code_url }}" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+                </a>
+              </span>
+              {% endif %}
+
+              {% if page.slides_url %}
+              <span class="link-block">
+                <a href="{{ page.slides_url }}" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Slides</span>
+                </a>
+              </span>
+              {% endif %}
+
+              {% if page.video_url %}
+              <span class="link-block">
+                <a href="{{ page.video_url }}" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-video"></i></span><span>Video</span>
+                </a>
+              </span>
+              {% endif %}
+              
+              {% if page.arxiv_url %}
+              <span class="link-block">
+                <a href="{{ page.arxiv_url }}" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
+                </a>
+              </span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column abstract-box">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          {{ content }} 
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser Section (YouTube, Image, or Video) -->
+{% if page.teaser_youtube_id or page.teaser_image or page.teaser_video %}
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+
+      {% if page.teaser_youtube_id %}
+        <!-- CASE 1: YouTube 비디오가 정의된 경우 -->
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/{{ page.teaser_youtube_id }}?autoplay=1&mute=1&loop=1&playlist={{ page.teaser_youtube_id }}&controls=0&showinfo=0&modestbranding=1" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+          </iframe>
+        </div>
+
+      {% elsif page.teaser_image %}
+        <!-- CASE 2: 이미지가 정의된 경우 -->
+        <img src="{{ site.baseurl }}/{{ page.teaser_image }}" alt="{{ page.teaser_image_alt | default: 'Teaser image' }}" style="width: 100%; border-radius: 10px;">
+
+      {% elsif page.teaser_video %}
+        <!-- CASE 3: 내장 비디오 파일이 정의된 경우 -->
+        <video id="teaser-video" autoplay muted loop controls width="100%">
+          <source src="{{ site.baseurl }}/{{ page.teaser_video }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      {% endif %}
+
+      <!-- 캡션은 어떤 경우든 공통으로 표시됩니다 -->
+      {% if page.teaser_caption %}
+        <h2 class="subtitle has-text-centered" style="margin-top: 1.5rem;">{{ page.teaser_caption }}</h2>
+      {% endif %}
+      
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ======================================================================= -->
+<!-- ============= ADDITIONAL DYNAMIC CONTENT BLOCKS SECTION =============== -->
+<!-- ======================================================================= -->
+
+{% if page.additional_content %}
+<section class="section">
+  <div class="container is-max-desktop">
+    
+    {% for block in page.additional_content %}
+      <div class="content-block content-block-{{ block.type }} {{ block.class }}">
+
+        {% case block.type %}
+          {% when 'main-heading' %}
+            <h2 class="title is-3">{{ block.text }}</h2>
+
+          {% when 'heading' %}
+            <h3 class="title is-4">{{ block.text }}</h3>
+
+          {% when 'paragraph' %}
+            <div class="content">
+              <p>{{ block.text | markdownify }}</p>
+            </div>
+
+          {% when 'image' %}
+            <figure class="image">
+              <img src="{{ site.baseurl }}{{ block.path }}" alt="{{ block.alt }}">
+              {% if block.caption %}
+                <figcaption class="has-text-centered">{{ block.caption }}</figcaption>
+              {% endif %}
+            </figure>
+
+                    {% when 'columns-50-50' %}
+            <!-- ===== 50/50 COLUMNS 블록 ===== -->
+            <div class="columns">
+              
+              <!-- 왼쪽 컬럼 처리 -->
+              <div class="column">
+                {% if block.left.heading %}
+                  <h4 class="title is-5">{{ block.left.heading }}</h4>
+                {% endif %}
+                {% if block.left.text %}
+                  <div class="content"><p>{{ block.left.text | markdownify }}</p></div>
+                {% endif %}
+                {% if block.left.image_path %}
+                  <figure class="image">
+                    <img src="{{ site.baseurl }}{{ block.left.image_path }}" alt="{{ block.left.image_alt }}">
+                  </figure>
+                {% endif %}
+              </div>
+
+              <!-- 오른쪽 컬럼 처리 -->
+              <div class="column">
+                {% if block.right.heading %}
+                  <h4 class="title is-5">{{ block.right.heading }}</h4>
+                {% endif %}
+                {% if block.right.text %}
+                  <div class="content"><p>{{ block.right.text | markdownify }}</p></div>
+                {% endif %}
+                {% if block.right.image_path %}
+                  <figure class="image">
+                    <img src="{{ site.baseurl }}{{ block.right.image_path }}" alt="{{ block.right.image_alt }}">
+                  </figure>
+                {% endif %}
+              </div>
+            </div>
+
+                    {% when 'columns-50-50' %}
+            <!-- ===== 50/50 COLUMNS 블록 (include 없이) ===== -->
+            <div class="columns">
+              
+              <!-- 왼쪽 컬럼 처리 -->
+              <div class="column">
+                {% for element in block.left.elements %}
+                  {% case element.type %}
+                    {% when 'heading' %}
+                      <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">{{ element.content }}</h4>
+                    {% when 'text' %}
+                      <div class="content"><p>{{ element.content | markdownify }}</p></div>
+                    {% when 'image' %}
+                      <figure class="image">
+                        <img src="{{ site.baseurl }}{{ element.path }}" alt="{{ element.alt }}">
+                        {% if element.caption %}<figcaption class="has-text-centered">{{ element.caption }}</figcaption>{% endif %}
+                      </figure>
+                  {% endcase %}
+                {% endfor %}
+              </div>
+
+              <!-- 오른쪽 컬럼 처리 -->
+              <div class="column">
+                {% for element in block.right.elements %}
+                  {% case element.type %}
+                    {% when 'heading' %}
+                      <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">{{ element.content }}</h4>
+                    {% when 'text' %}
+                      <div class="content"><p>{{ element.content | markdownify }}</p></div>
+                    {% when 'image' %}
+                      <figure class="image">
+                        <img src="{{ site.baseurl }}{{ element.path }}" alt="{{ element.alt }}">
+                        {% if element.caption %}<figcaption class="has-text-centered">{{ element.caption }}</figcaption>{% endif %}
+                      </figure>
+                  {% endcase %}
+                {% endfor %}
+              </div>
+            </div>
+
+          {% when 'columns-66-33' %}
+            <!-- ===== 66/33 COLUMNS 블록 (include 없이) ===== -->
+            <div class="columns">
+              
+              <!-- 왼쪽 (2/3) 컬럼 처리 -->
+              <div class="column is-two-thirds">
+                {% for element in block.left.elements %}
+                  {% case element.type %}
+                    {% when 'heading' %}
+                      <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">{{ element.content }}</h4>
+                    {% when 'text' %}
+                      <div class="content"><p>{{ element.content | markdownify }}</p></div>
+                    {% when 'image' %}
+                      <figure class="image">
+                        <img src="{{ site.baseurl }}{{ element.path }}" alt="{{ element.alt }}">
+                        {% if element.caption %}<figcaption class="has-text-centered">{{ element.caption }}</figcaption>{% endif %}
+                      </figure>
+                  {% endcase %}
+                {% endfor %}
+              </div>
+
+              <!-- 오른쪽 (1/3) 컬럼 처리 -->
+              <div class="column is-one-third">
+                {% for element in block.right.elements %}
+                  {% case element.type %}
+                    {% when 'heading' %}
+                      <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">{{ element.content }}</h4>
+                    {% when 'text' %}
+                      <div class="content"><p>{{ element.content | markdownify }}</p></div>
+                    {% when 'image' %}
+                      <figure class="image">
+                        <img src="{{ site.baseurl }}{{ element.path }}" alt="{{ element.alt }}">
+                        {% if element.caption %}<figcaption class="has-text-centered">{{ element.caption }}</figcaption>{% endif %}
+                      </figure>
+                  {% endcase %}
+                {% endfor %}
+              </div>
+            </div>
+
+        {% endcase %}
+      </div>
+    {% endfor %}
+
+  </div>
+</section>
+{% endif %}
+
+<!-- Youtube Video -->
+{% if page.youtube_id %}
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/{{ page.youtube_id }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- Image carousel -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Demo @CHI '25</h2>
+      {% if page.image_carousel %} 
+      <div id="results-carousel" class="carousel results-carousel">
+        {% for item in page.image_carousel %}
+        <div class="item">
+          <img src="{{ site.baseurl }}/{{ item.image }}" alt="{{ item.alt | default: 'Carousel image' }}"/>
+          <h2 class="subtitle has-text-centered">
+            {{ item.caption }}
+          </h2>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+<!-- End image carousel -->
+
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      {% if page.video_carousel %} <!-- 만약 video_carousel 목록이 Front Matter에 정의되어 있다면 -->
+      <h2 class="title is-3">More examples</h2> <!-- 비디오 캐러셀 제목도 변수로 처리할 수 있습니다 -->
+      <div id="video-carousel" class="carousel results-carousel"> <!-- id를 video-carousel로 변경! -->
+        {% for item in page.video_carousel %} <!-- 목록의 각 항목을 반복 -->
+        <div class="item">
+          <video poster="" autoplay controls muted loop height="100%">
+            <source src="{{ site.baseurl }}/{{ item.video }}" type="video/mp4">
+          </video>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+ 
+<!-- BibTeX -->
+{% if page.bibtex %}
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>{{ page.bibtex }}</code></pre>
+  </div>
+</section>
+{% endif %}
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-12">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
