@@ -53,9 +53,24 @@ body_classes: page-home
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-lg-12">
-        <div class="grid-header">
-          <h2>Publications</h2>
-        </div>
+            <div class="section-divider">
+      <hr>
+      <div class="divider-content">
+        <h2 class="divider-title">PUBLICATIONS</h2>
+        <p class="divider-keywords">
+          <span>HCI</span>
+          <span>·</span>
+          <span>XR INTERACTION</span>
+          <span>·</span>
+          <span>TANGIBLE INTERFACE</span>
+          <span>·</span>
+          <span>MULTIMODAL SYSTEM</span>
+          <span>·</span>
+          <span>CREATIVE TOOLS</span>
+        </p>
+      </div>
+      <hr>
+    </div>
 
 {% assign pub_page = site.pages | where: "name", "publications.md" | first %}
     {% if pub_page %}

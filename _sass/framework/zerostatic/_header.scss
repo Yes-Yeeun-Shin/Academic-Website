@@ -3,6 +3,8 @@
   font-size: var(--header-font-size);
   background-color: var(--color-base-bg);
   color: var(--color-header-text);
+  padding-top: 1rem;
+  padding-bottom: 0rem;
   .container {
     display: flex;
     justify-content: flex-end;

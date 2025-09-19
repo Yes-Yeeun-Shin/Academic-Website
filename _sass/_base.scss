@@ -246,9 +246,11 @@ ul.task-list input[type="checkbox"] {
 
 .navbar {
   box-shadow: none;
+  padding-top: 1.5rem !important;
   border-bottom: 1px solid var(--global-divider-color);
   background-color: var(--global-bg-color);
   opacity: 0.95;
+  
 }
 
 .navbar .dropdown-menu {
@@ -257,6 +259,7 @@ ul.task-list input[type="checkbox"] {
 
   a:not(.active) {
     color: var(--global-text-color);
+    
   }
 
   a:hover {
@@ -270,6 +273,7 @@ ul.task-list input[type="checkbox"] {
 
 .dropdown-item {
   color: var(--global-text-color);
+  
 
   &:hover {
     color: var(--global-hover-color);
@@ -1613,7 +1617,7 @@ a.btn:hover {
    Custom Hero Section Styles
    ========================================================================== */
 .hero-section {
-  padding: 5rem 0;
+  padding: 2rem 0rem 4rem !important;
   // position: relative;
   // z-index: 1;
 }
@@ -1661,7 +1665,7 @@ a.btn:hover {
 
 .hero-description a {
   text-decoration: none; 
-  font-weight: 700;
+  font-weight: 500;
   color: var(--global-text-color) !important;
 }
 
@@ -1691,6 +1695,22 @@ a.btn:hover {
   margin-right: 0.5rem;
 }
 
+/* ==========================================================================
+   Custom Text Styles
+   ========================================================================== */
+.text-theme-color {
+  color: var(--global-theme-color);
+  font-weight: 500;   
+  font-style: italic;   
+}
+
+.text-light-color {
+  color: var(--global-text-color-light);
+  font-style: italic;   
+}
+
+
+
 /* Mobile Responsive */
 @media (max-width: 767px) {
   .hero-section {
@@ -1704,6 +1724,54 @@ a.btn:hover {
     font-size: 2.2rem;
   }
 }
+
+/* ==========================================================================
+   Section Keywords Header Styles
+   ========================================================================== */
+.section-divider {
+  margin-bottom: 2rem; /* 위아래 간격 */
+}
+
+.section-divider hr {
+  border-top: 1px solid var(--global-text-color-light);
+  margin: 0;
+}
+
+.divider-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 양쪽으로 요소를 분산 (필요시 center로 변경) */
+  padding: 0.5rem 0;
+}
+
+.divider-title {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em; /* 자간 */
+  margin: 0;
+  white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+.divider-keywords {
+  margin: 0;
+  text-align: right;
+}
+
+.divider-keywords span {
+  margin-left: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--global-text-color-light);
+  letter-spacing: 0.05em;
+}
+
+/* 모바일 화면 */
+@media (max-width: 1200px) {
+  .section-divider .divider-keywords {
+    display: none;
+  }
+}
+
 
 /* ==========================================================================
    News Section Styles
@@ -1806,7 +1874,7 @@ a.btn:hover {
 
 .logo-text {
   font-weight: 700 !important;
-  font-size: 1.4rem !important;
+  font-size: 1.3rem !important;
 }
 
 .logo-text a:hover {
