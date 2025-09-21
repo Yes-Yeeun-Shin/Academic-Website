@@ -106,6 +106,8 @@ defaults:
 # SCSS
 sass:
   style: compact
+  load_paths:
+    - _sass
 
 # Include / Exclude / Keep (중복 제거 & 병합)
 include: ["_pages", "_scripts"]
