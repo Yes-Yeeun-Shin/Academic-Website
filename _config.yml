@@ -2,7 +2,7 @@
 # Jekyll Config (merged & cleaned)
 # -------------------
 baseurl: ""
-url: ""
+url: "https://yeeun-shin.com"
 permalink: pretty
 
 # Markdown & highlight
