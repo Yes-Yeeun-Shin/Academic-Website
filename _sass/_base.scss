@@ -1516,18 +1516,18 @@ a.btn:hover {
    Custom Bottom Footer Styles 
    ========================================================================== */
 .bottom {
-  padding: 40px 0;
+  padding: 20px 0;
   text-align: center;
 }
 
 .bottom .social {
-  margin-bottom: 10px; 
+  margin-bottom: 0; 
   justify-content: center; 
 }
 
 .bottom .social a {
   font-size: 1.6rem;             
-  margin: 2px;                
+  margin: 5px;                
   color: var(--global-text-color); 
   transition: color 0.2s ease;   
 }
@@ -1538,7 +1538,7 @@ a.btn:hover {
 }
 
 .bottom .copyright {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--global-text-color-light);
 }
 
@@ -1641,10 +1641,10 @@ a.btn:hover {
 
 .profile-picture {
   max-width: 100%;
-  border-radius: 5px;
-  // box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-  margin-right: 1rem;
-  margin-left: 0.5rem;
+  height: auto;
+  border-radius: 6px;
+  // margin-right: 1rem;
+  // margin-left: 1rem;
 }
 
 .hero-title {
@@ -1700,12 +1700,13 @@ a.btn:hover {
    ========================================================================== */
 .text-theme-color {
   color: var(--global-theme-color);
-  font-weight: 500;   
+  font-weight: 600;   
   font-style: italic;   
 }
 
 .text-light-color {
   color: var(--global-text-color-light);
+  font-weight: 500;
   font-style: italic;   
 }
 
@@ -1740,14 +1741,14 @@ a.btn:hover {
 .divider-content {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* 양쪽으로 요소를 분산 (필요시 center로 변경) */
+  justify-content: space-between; /* 양쪽 요소 분산 */
   padding: 0.5rem 0;
 }
 
 .divider-title {
   font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.1em; /* 자간 */
+  letter-spacing: 0.1em; 
   margin: 0;
   white-space: nowrap; /* 줄바꿈 방지 */
 }
@@ -1758,7 +1759,7 @@ a.btn:hover {
 }
 
 .divider-keywords span {
-  margin-left: 1.5rem;
+  margin-left: 1.0rem;
   font-size: 0.9rem;
   font-weight: 300;
   color: var(--global-text-color-light);
@@ -1920,6 +1921,21 @@ h2.thesis-title {
   margin-bottom: 0; 
 }
 
+.page-home .publication-entry .align-items-start {
+  background-color: var(--global-card-bg-color);; 
+  padding: 0.5rem; /* 안쪽 여백 */
+  border-radius: 12px; 
+  margin-bottom: 1.5rem; 
+}
+
+.page-home .publication-entry {
+    border-bottom: none;
+}
+.page-home .publications ol.bibliography li {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 /* ==========================================================================
    Gallery Item Detail Page Styles (Project-Right Layout)
    ========================================================================== */
@@ -1950,6 +1966,7 @@ h2.thesis-title {
 .gallery-item-content {
   img {
     max-width: 100%;
+    width: 100%;
     height: auto;
     border-radius: 8px;
     margin: 0;

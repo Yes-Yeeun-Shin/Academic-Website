@@ -1,17 +1,26 @@
+{% assign gallery_items = include.source | default: site.gallery %}
+{% assign gallery_title = include.title | default: "My Gallery" %}
+{% assign gallery_categories = include.categories %}
+
 <div class="section pt-0">
   <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="grid-header">
-          <h2>Computational Crafting<span class="gallery-category-text">  Digital · Physical · Material</span> </h2>
-          
+          <h3>{{ gallery_title }}
+            {% if gallery_categories %}
+              <span class="gallery-category-text">{{ gallery_categories }}</span>
+            {% endif %}
+          </h3>
         </div>
       </div>
     </div>
     <div class="gallery-grid">
-      {% for item in site.gallery %}
+      {% for item in gallery_items %}
         <div class="gallery-item-wrapper">
-          <a href="{{ item.url }}" class="gallery-card">
+            <a href="{% if item.external_url %}{{ item.external_url }}{% else %}{{ item.url | relative_url }}{% endif %}" 
+                class="gallery-card" 
+                {% if item.external_url %}target="_blank" rel="noopener noreferrer"{% endif %}>  
             <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" class="gallery-card-image">
             <div class="gallery-hover-content">
               <h3 class="gallery-hover-title">{{ item.title }}</h3>

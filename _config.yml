@@ -60,7 +60,10 @@ collections:
     permalink: /blog/:path/
   gallery:
     output: true
-    permalink: /gallery/:path/ #
+    permalink: /crafting/:path/ #
+  gallery_hci:
+    output: true
+    permalink: /human-centered/:path/ #
   publication:
     output: true
     permalink: /:collection/:path/
@@ -136,11 +139,11 @@ title: "Yeeun Shin"
 category_dir: category
 
 colors:
-  primary_bg: "#ffffff"
+  primary_bg: "#f8f8f8"
   primary_bg_2: "#0d042b"
   primary_bg_3: "#CDD9E4"
   primary_text: "#fdfcf9"
-  base_bg: "#ffffff"
+  base_bg: "#f8f8f8"
   base_bg_2: "#F1F3F5"
   base_bg_3: "#D2D9DF"
   base_text: "#0d042b"
@@ -246,7 +249,7 @@ footer:
 bottom:
   enable_bottom: true
   enable_bottom_menu: false
-  copyright_text: "2025 © Yeeun Shin"
+  copyright_text: "© 2025 Yeeun Shin. All rights reserved."
   show_rss_icon: true
 
 # -------------------
