@@ -16,7 +16,7 @@ authors:
   - name: Seung Hyeon Han
   - name: Woohun Lee
 
-conference: "CHI '25 Interactivity / M.S. Thesis"
+conference: "CHI 2025 Interactivity - M.S. Thesis"
 equal_contrib_notice: false 
 
 paper_url: "https://doi.org/10.1145/3706599.3721165" 
@@ -34,7 +34,7 @@ image_carousel:
   - image: "assets/img/deskconsole/chi1.gif"
   - image: "assets/img/deskconsole/chi2.jpg"
   - image: "assets/img/deskconsole/chi3.gif"
-  - image: "assets/img/deskconsole/chi5.jpg"
+  - image: "assets/img/deskconsole/chi5.JPG"
   - image: "assets/img/deskconsole/chi6.jpg"
   - image: "assets/img/deskconsole/chi7.png"
   - image: "assets/img/deskconsole/chi4.jpg"
