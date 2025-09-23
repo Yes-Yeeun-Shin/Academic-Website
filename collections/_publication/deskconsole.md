@@ -24,7 +24,8 @@ paper_url: "https://doi.org/10.1145/3706599.3721165"
 slides_url: "/assets/pdf/Defense_Master_Thesis_ppt.pdf"
 video_url: "https://youtu.be/5QcrwW9Kr3g?si=KabvKkiTJLaT3AIl"
 
-teaser_video: "assets/video/desk-console-walkthrough-video.mp4" 
+teaser_video: "assets/video/demo_video_deskconsole.mp4" 
+# teaser_youtube_id: "5QcrwW9Kr3g"
 
 
 # youtube_id: "5QcrwW9Kr3g" # Youtube 비디오 ID (https://www.youtube.com/watch?v= 다음 부분)
