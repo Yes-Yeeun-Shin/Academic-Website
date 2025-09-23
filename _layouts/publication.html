@@ -151,12 +151,12 @@
         <img src="{{ site.baseurl }}/{{ page.teaser_image }}" alt="{{ page.teaser_image_alt | default: 'Teaser image' }}" style="width: 100%; border-radius: 10px;">
 
       {% elsif page.teaser_video %}
-        <!-- CASE 3: 내장 비디오 파일이 정의된 경우 -->
-        <video id="teaser-video" autoplay muted loop controls width="100%">
-          <source src="{{ site.baseurl }}/{{ page.teaser_video }}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      {% endif %}
+      <!-- CASE 3: 내장 비디오 파일이 정의된 경우 -->
+      <video id="teaser-video" autoplay muted loop controls playsinline width="100%">
+        <source src="{{ page.teaser_video | relative_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    {% endif %}
 
       <!-- 캡션은 어떤 경우든 공통으로 표시됩니다 -->
       {% if page.teaser_caption %}
