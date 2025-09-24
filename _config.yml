@@ -208,7 +208,7 @@ cookie_banner:
   show_manage_cookies_at_bottom: true
 
 analytics:
-  google_analytics_id: ""
+  google_analytics_id: "G-0RLB95W610"
   gtm_id: ""
   plausible_data_domain: ""
   umami_data_website_id: ""
