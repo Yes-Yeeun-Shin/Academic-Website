@@ -4,7 +4,7 @@ title: "MuseumSurfing. <br/>Virtual Museum Navigation"
 subtitle: " Networked Artwork Navigator in Virtual Museum Reflecting User Preference"
 image: "/assets/img/gallery/vr/museumsurfing.gif"   
 keywords:
-  - Multi-user VR (Photon)
+  - Multi-user VR
   - Unity 3D 
   - Oculus Quest
 
