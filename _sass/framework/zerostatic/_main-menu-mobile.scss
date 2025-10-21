@@ -19,6 +19,7 @@
     justify-content: flex-end;
     align-items: center;
     height: var(--header-height);
+    padding: 0 $grid-gutter-width;
   }
   .menu-main-mobile-center {
     display: flex;
@@ -43,9 +44,10 @@
   }
   
   .menu-main-close {
+    display: none;
     color: var(--color-primary-text);
     font-size: 30px;
-    padding: 10px $grid-gutter-width;
+    padding: 10px 0;
   }
   &.nested {
     ul {
@@ -115,7 +117,6 @@
     display: none;
   }
   &.open {
-    position: absolute;
     z-index: 110;
   }
   &:hover {

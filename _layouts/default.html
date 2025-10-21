@@ -71,10 +71,15 @@
 
     if (heroTextColumn && profilePicture) {
       const matchHeights = () => {
-        profilePicture.style.height = 'auto';
-        const textHeight = heroTextColumn.offsetHeight;
-        profilePicture.style.height = `${textHeight}px`;
-        profilePicture.style.objectFit = 'cover';
+        if (window.innerWidth > 767) {
+          profilePicture.style.height = 'auto';
+          const textHeight = heroTextColumn.offsetHeight;
+          profilePicture.style.height = `${textHeight}px`;
+          profilePicture.style.objectFit = 'cover';
+        } else {
+          profilePicture.style.removeProperty('height');
+          profilePicture.style.removeProperty('object-fit');
+        }
       };
 
       matchHeights();
