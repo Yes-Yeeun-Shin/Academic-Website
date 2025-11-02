@@ -12,7 +12,8 @@ hero:
   title_name: "Yeeun Shin"
   image: "assets/img/profile.png" 
   description: |
-    I envision <span class="text-theme-color"> Creativity in Action </span> where immersive creation is driven by senses and natural movement, like <span class="text-light-color"> thinking with hands</span>. For this vision, I explore novel interaction techniques for adaptive XR+AI systems that transform instinctive movement and everyday interactions into expressive workflows at the intersection of technical Human-Computer Interaction, Extended Reality(XR), Tangible Interaction, and Creativity Support.
+    I envision <span class="text-theme-color"> Creative Intelligence in Action</span>, where creativity emerges through embodied movement and exploration rather than frictionless automation. Building on <span class="text-light-color"> Thinking with Hands</span>, I explore how intelligent systems can engage the body’s natural sensemaking to amplify reasoning and imagination.
+    For this vision, I design adaptive XR+AI systems that transform instinctive movement and everyday perception into expressive and participatory workflows, at the intersection of technical Human-Computer Interaction, Extended Reality(XR), and Creativity Support.
 
     Recently, I design multimodal AI interfaces with Gemini LLMs at Samsung Electronics, advancing accessible human–AI interaction and co-creation through conversational design and reasoning visualization. Previously, I earned my [MS at KAIST, advised by Prof. Woohun Lee](https://www.wonderlab.kaist.ac.kr/){:target="_blank"} and [BS in Materials Science and Engineering at POSTECH](https://mse.postech.ac.kr/main-eng/){:target="_blank"}.
 ################## HERO ##################

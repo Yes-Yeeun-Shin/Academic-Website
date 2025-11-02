@@ -4,7 +4,7 @@ title: "Vision AI Companion"
 subtitle: ""
 image: "/assets/img/gallery/ai/ai_thumb.gif"  
 keywords:
-  - ⧉ Conversational AI
+  - Conversational AI
   - Context-Aware 
   - Multimodal
 

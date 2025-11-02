@@ -11,7 +11,7 @@ keywords:
 
 authors:
   - name: Yeeun Shin
-    link: "https://yeeunsh.com" 
+    link: "https://yeeun-shin.com/" 
     equal_contrib: false
   - name: Seung Hyeon Han
   - name: Woohun Lee
@@ -33,6 +33,7 @@ teaser_video: "assets/video/deskconsole_walkthru.mp4"
 # youtube_id: "5QcrwW9Kr3g" # Youtube 비디오 ID (https://www.youtube.com/watch?v= 다음 부분)
 
 # --- 이미지 캐러셀 데이터 ---
+carousel_title: "Demo @CHI '25"
 image_carousel:
   - image: "assets/img/deskconsole/chi1.gif"
   - image: "assets/img/deskconsole/chi2.jpg"
@@ -113,6 +114,9 @@ additional_content:
   - type: image
     path: "/assets/img/deskconsole/result.png"
     alt: "Desk Console results"
+
+  - type: paragraph 
+    text: "<br>"  
 
   - type: columns-66-33
     left:

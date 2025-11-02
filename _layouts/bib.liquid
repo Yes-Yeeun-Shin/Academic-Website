@@ -24,12 +24,23 @@
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-5 abbr ps-0 mb-0">
       {% if entry.preview %}
+        {% if entry.project_page %}
+      <a href="{{ entry.project_page | relative_url }}">
         {% if entry.preview contains '://' %}
-          <img class="preview img-fluid rounded" src="{{ entry.preview }}">
+          <img class="preview img-fluid rounded" src="{{ entry.preview }}" alt="{{ entry.title }}">
         {% else %}
           {% assign entry_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
-          <img class="preview img-fluid rounded" src="{{ entry_path | relative_url }}" alt="{{ entry.preview }}">
+          <img class="preview img-fluid rounded" src="{{ entry_path | relative_url }}" alt="{{ entry.title }}">
         {% endif %}
+      </a>
+    {% else %}
+      {% if entry.preview contains '://' %}
+        <img class="preview img-fluid rounded" src="{{ entry.preview }}" alt="{{ entry.title }}">
+      {% else %}
+        {% assign entry_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
+        <img class="preview img-fluid rounded" src="{{ entry_path | relative_url }}" alt="{{ entry.title }}">
+      {% endif %}
+    {% endif %}
       {% endif %}
       {% if entry.abbr %}
         {% if site.data.venues[entry.abbr] %}

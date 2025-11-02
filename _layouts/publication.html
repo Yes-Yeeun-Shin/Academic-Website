@@ -139,7 +139,7 @@
       {% if page.teaser_youtube_id %}
         <!-- CASE 1: YouTube 비디오가 정의된 경우 -->
         <div class="publication-video">
-          <iframe src="https://www.youtu.be/embed/{{ page.teaser_youtube_id }}?autoplay=1&mute=1&loop=1&playlist={{ page.teaser_youtube_id }}&controls=0&showinfo=0&modestbranding=1" 
+          <iframe src="https://www.youtube.com/embed/{{ page.teaser_youtube_id }}?autoplay=1&mute=1&loop=1&playlist={{ page.teaser_youtube_id }}&controls=0&showinfo=0&modestbranding=1" 
                   frameborder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                   allowfullscreen>
@@ -199,42 +199,7 @@
               {% endif %}
             </figure>
 
-                    {% when 'columns-50-50' %}
-            <!-- ===== 50/50 COLUMNS 블록 ===== -->
-            <div class="columns">
-              
-              <!-- 왼쪽 컬럼 처리 -->
-              <div class="column">
-                {% if block.left.heading %}
-                  <h4 class="title is-5">{{ block.left.heading }}</h4>
-                {% endif %}
-                {% if block.left.text %}
-                  <div class="content"><p>{{ block.left.text | markdownify }}</p></div>
-                {% endif %}
-                {% if block.left.image_path %}
-                  <figure class="image">
-                    <img src="{{ site.baseurl }}{{ block.left.image_path }}" alt="{{ block.left.image_alt }}">
-                  </figure>
-                {% endif %}
-              </div>
-
-              <!-- 오른쪽 컬럼 처리 -->
-              <div class="column">
-                {% if block.right.heading %}
-                  <h4 class="title is-5">{{ block.right.heading }}</h4>
-                {% endif %}
-                {% if block.right.text %}
-                  <div class="content"><p>{{ block.right.text | markdownify }}</p></div>
-                {% endif %}
-                {% if block.right.image_path %}
-                  <figure class="image">
-                    <img src="{{ site.baseurl }}{{ block.right.image_path }}" alt="{{ block.right.image_alt }}">
-                  </figure>
-                {% endif %}
-              </div>
-            </div>
-
-                    {% when 'columns-50-50' %}
+            {% when 'columns-50-50' %}
             <!-- ===== 50/50 COLUMNS 블록 (include 없이) ===== -->
             <div class="columns">
               
@@ -311,7 +276,96 @@
                 {% endfor %}
               </div>
             </div>
+          {% when 'columns-33-66' %}
+            <!-- ===== 33/66 COLUMNS 블록===== -->
+            <div class="columns">
+              <div class="column is-one-third">
+                {% for element in block.left.elements %}
+                  {% case element.type %}
+                    {% when 'heading' %}
+                      <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">{{ element.content }}</h4>
+                    {% when 'text' %}
+                      <div class="content"><p>{{ element.content | markdownify }}</p></div>
+                    {% when 'image' %}
+                      <figure class="image">
+                        <img src="{{ site.baseurl }}{{ element.path }}" alt="{{ element.alt }}">
+                        {% if element.caption %}<figcaption class="has-text-centered">{{ element.caption }}</figcaption>{% endif %}
+                      </figure>
+                  {% endcase %}
+                {% endfor %}
+              </div>
+            <div class="column is-two-thirds">
+                {% for element in block.right.elements %}
+                  {% case element.type %}
+                    {% when 'heading' %}
+                      <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">{{ element.content }}</h4>
+                    {% when 'text' %}
+                      <div class="content"><p>{{ element.content | markdownify }}</p></div>
+                    {% when 'image' %}
+                      <figure class="image">
+                        <img src="{{ site.baseurl }}{{ element.path }}" alt="{{ element.alt }}">
+                        {% if element.caption %}<figcaption class="has-text-centered">{{ element.caption }}</figcaption>{% endif %}
+                      </figure>
+                  {% endcase %}
+                {% endfor %}
+              </div>
+            </div>
+          {% when 'columns-33-33-33' %}
+            <!-- ===== 33/33/33 COLUMNS 블록 ===== -->
+            <div class="columns">
+              
+              <!-- 첫 번째 컬럼 -->
+              <div class="column">
+                {% for element in block.left.elements %}
+                  {% case element.type %}
+                    {% when 'heading' %}
+                      <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">{{ element.content }}</h4>
+                    {% when 'text' %}
+                      <div class="content"><p>{{ element.content | markdownify }}</p></div>
+                    {% when 'image' %}
+                      <figure class="image">
+                        <img src="{{ site.baseurl }}{{ element.path }}" alt="{{ element.alt }}">
+                        {% if element.caption %}<figcaption class="has-text-centered">{{ element.caption }}</figcaption>{% endif %}
+                      </figure>
+                  {% endcase %}
+                {% endfor %}
+              </div>
 
+              <!-- 두 번째 컬럼 -->
+              <div class="column">
+                {% for element in block.middle.elements %}
+                  {% case element.type %}
+                    {% when 'heading' %}
+                      <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">{{ element.content }}</h4>
+                    {% when 'text' %}
+                      <div class="content"><p>{{ element.content | markdownify }}</p></div>
+                    {% when 'image' %}
+                      <figure class="image">
+                        <img src="{{ site.baseurl }}{{ element.path }}" alt="{{ element.alt }}">
+                        {% if element.caption %}<figcaption class="has-text-centered">{{ element.caption }}</figcaption>{% endif %}
+                      </figure>
+                  {% endcase %}
+                {% endfor %}
+              </div>
+
+              <!-- 세 번째 컬럼 -->
+              <div class="column">
+                {% for element in block.right.elements %}
+                  {% case element.type %}
+                    {% when 'heading' %}
+                      <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">{{ element.content }}</h4>
+                    {% when 'text' %}
+                      <div class="content"><p>{{ element.content | markdownify }}</p></div>
+                    {% when 'image' %}
+                      <figure class="image">
+                        <img src="{{ site.baseurl }}{{ element.path }}" alt="{{ element.alt }}">
+                        {% if element.caption %}<figcaption class="has-text-centered">{{ element.caption }}</figcaption>{% endif %}
+                      </figure>
+                  {% endcase %}
+                {% endfor %}
+              </div>
+            </div>
+          
         {% endcase %}
       </div>
     {% endfor %}
@@ -325,7 +379,7 @@
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Video Presentation</h2>
+      <h2 class="title is-3 has-text-centered">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <div class="publication-video">
@@ -338,11 +392,34 @@
 </section>
 {% endif %}
 
+<!-- Post-Video Image Section -->
+{% if page.post_video_image %}
+<section class="hero is-small is-light"> 
+  <div class="hero-body">
+    <div class="container">
+      {% if page.post_video_image_title %}
+        <h2 class="title is-3">{{ page.post_video_image_title }}</h2>
+      {% endif %}
+      <div class="columns is-centered has-text-centered">
+          <figure class="image">
+            <img src="{{ site.baseurl }}{{ page.post_video_image }}" alt="{{ page.post_video_image_alt | default: 'Post video image' }}" style="border-radius: 10px;"> 
+            {% if page.post_video_image_caption %}
+              <figcaption class="has-text-centered">{{ page.post_video_image_caption }}</figcaption>
+            {% endif %}
+          </figure>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
 <!-- Image carousel -->
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Demo @CHI '25</h2>
+      {% if page.carousel_title %} 
+        <h2 class="title is-3">{{ page.carousel_title }}</h2>
+      {% endif %}
       {% if page.image_carousel %} 
       <div id="results-carousel" class="carousel results-carousel">
         {% for item in page.image_carousel %}

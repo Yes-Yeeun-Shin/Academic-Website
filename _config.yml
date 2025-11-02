@@ -251,7 +251,7 @@ footer:
 bottom:
   enable_bottom: true
   enable_bottom_menu: false
-  copyright_text: "© 2025 Yeeun Shin. All rights reserved."
+  copyright_text: "© 2025 Yeeun Shin."
   show_rss_icon: true
 
 # -------------------
