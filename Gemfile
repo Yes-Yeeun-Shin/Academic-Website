@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Jekyll core
-gem "jekyll", "~> 4.3"
+gem "jekyll", "~> 4.3.3"
 gem "webrick", "~> 1.7"   # jekyll serve에 필요 (Ruby 3.x)
 
 # Core plugins that directly affect site building
