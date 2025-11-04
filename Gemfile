@@ -4,6 +4,9 @@ source "https://rubygems.org"
 gem "jekyll", "~> 4.3.3"
 gem "webrick", "~> 1.7"   # jekyll serve에 필요 (Ruby 3.x)
 
+gem "jekyll-sass-converter", "~> 2.2"
+gem "sassc", "~> 2.4"
+
 # Core plugins that directly affect site building
 group :jekyll_plugins do
   gem "jekyll-environment-variables"
@@ -25,8 +28,6 @@ group :jekyll_plugins do
   gem "jekyll-twitter-plugin"
   gem "jemoji"
   gem "classifier-reborn"      # 빌드 중 콘텐츠 분류에 사용
-
-  gem 'sassc'
 end
 
 # For development or external data fetching
