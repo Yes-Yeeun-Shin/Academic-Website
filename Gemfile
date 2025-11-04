@@ -25,6 +25,8 @@ group :jekyll_plugins do
   gem "jekyll-twitter-plugin"
   gem "jemoji"
   gem "classifier-reborn"      # 빌드 중 콘텐츠 분류에 사용
+
+  gem 'sassc'
 end
 
 # For development or external data fetching
@@ -38,3 +40,5 @@ group :other_plugins do
 end
 
 gem "nokogiri", "~> 1.18"
+
+
