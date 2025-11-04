@@ -40,7 +40,7 @@ end
 
 gem "nokogiri", "~> 1.18"
 
-gem "sass-embedded", "~> 1.63"
+gem "sass-embedded", "= 1.63.6"
 
 
 
