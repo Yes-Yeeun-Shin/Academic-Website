@@ -8,7 +8,7 @@ keywords:
   - Context-Aware 
   - Multimodal
 
-external_url: "https://news.samsung.com/global/samsung-unveils-vision-ai-companion-at-ifa-2025-launching-a-new-era-of-ai-powered-displays"
+external_url: "https://news.samsung.com/global/samsung-vision-ai-companion-bringing-conversational-ai-to-households-worldwide"
 
 ---
 
